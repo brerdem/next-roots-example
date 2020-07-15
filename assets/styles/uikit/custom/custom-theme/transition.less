@@ -1,0 +1,45 @@
+//
+// Component: Transition
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@transition-duration:                           0.3s;
+
+@transition-scale:                              1.1;
+
+@transition-slide-small-translate:              10px;
+@transition-slide-medium-translate:             50px;
+
+@transition-slow-duration:                      0.7s;
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-transition-misc() {
+    .uk-transition-toggle {
+        .transition-bottom {
+            box-sizing: border-box;
+            height: 100%;
+            transform: translateY(calc(~"100% - 60px"));
+            transition: .2s ease-in-out;
+            transition-property: transform, opacity, background;
+
+            p {
+                line-height: 24px;
+                margin: 10px 0 0;
+            }
+        }
+
+        &:hover {
+            .transition-bottom {
+                background-color: fade(#000, 60%);
+                transform: translateY(0);
+            }
+        }
+    }
+}

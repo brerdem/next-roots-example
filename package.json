@@ -1,0 +1,23 @@
+{
+  "name": "lcw-corporate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "yarn next-roots && next dev",
+    "build": "yarn next-roots && next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "colors": "^1.4.0",
+    "google-maps-react": "^2.0.6",
+    "isomorphic-unfetch": "^3.0.0",
+    "less": "^3.11.1",
+    "next": "9.4.0",
+    "next-roots": "^1.0.5",
+    "nookies": "^2.3.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "uikit": "^3.5.4"
+  }
+}

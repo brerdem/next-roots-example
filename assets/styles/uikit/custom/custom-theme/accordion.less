@@ -1,0 +1,117 @@
+//
+// Component: Accordion
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@accordion-item-margin-top:                    0;
+
+@accordion-title-font-size:                    24px;
+@accordion-title-line-height:                  1.4;
+@accordion-title-color:                        @global-emphasis-color;
+@accordion-title-hover-color:                  @global-color;
+
+@accordion-content-margin-top:                 @global-margin;
+
+//
+// New
+//
+
+@accordion-icon-margin-left:                   10px;
+@accordion-icon-color:                         @global-color;
+@internal-accordion-open-image:                "/icons/icn-chevron-up.svg";
+@internal-accordion-close-image:               "/icons/icn-chevron-down.svg";
+
+
+// Component
+// ========================================================================
+
+.hook-accordion() {
+    > li {
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .uk-open {
+        .uk-accordion-title {
+            border-bottom: 1px solid #dcdcdc;
+        }
+    }
+}
+
+
+// Item
+// ========================================================================
+
+.hook-accordion-item() {}
+
+
+// Title
+// ========================================================================
+
+.hook-accordion-title() {
+
+    padding: 15px 0;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        width: (@accordion-title-line-height * 1em);
+        height: (@accordion-title-line-height * 1em);
+        margin-left: @accordion-icon-margin-left;
+        float: right;
+        .svg-fill(@internal-accordion-close-image, "#000", @accordion-icon-color);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    .uk-open > &::before { .svg-fill(@internal-accordion-open-image, "#000", @accordion-icon-color); }
+
+}
+
+.hook-accordion-title-hover() {}
+
+
+// Content
+// ========================================================================
+
+.hook-accordion-content() {
+    padding-bottom: 15px;
+
+    > div:last-child hr {
+        display: none;
+    }
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-accordion-misc() {
+    @media (max-width: @breakpoint-xsmall-max) {
+        .uk-accordion-title {
+            font-size: 18px;
+        }
+    }
+}
+
+// Inverse
+// ========================================================================
+
+@inverse-accordion-title-color:             @inverse-global-emphasis-color;
+@inverse-accordion-title-hover-color:       @inverse-global-color;
+
+.hook-inverse-accordion-item() {}
+
+.hook-inverse-accordion-title() {}
+.hook-inverse-accordion-title-hover() {}
+
+.hook-inverse() {
+
+    .uk-accordion-title::before { .svg-fill(@internal-accordion-close-image, "#000", @inverse-global-color); }
+
+    .uk-open > .uk-accordion-title::before { .svg-fill(@internal-accordion-open-image, "#000", @inverse-global-color); }
+
+}

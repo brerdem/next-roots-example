@@ -1,0 +1,306 @@
+//
+// Component: Section
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@section-padding-vertical:                        50px;
+@section-padding-vertical-m:                      @global-large-margin;
+
+@section-xsmall-padding-vertical:                 30px;
+
+@section-small-padding-vertical:                  50px;
+
+@section-large-padding-vertical:                  50px;
+@section-large-padding-vertical-m:                100px;
+
+@section-xlarge-padding-vertical:                 @global-xlarge-margin;
+@section-xlarge-padding-vertical-m:               (@global-large-margin + @global-xlarge-margin);
+
+@section-default-background:                      @global-background;
+
+@section-muted-background:                        @global-muted-background;
+
+@section-primary-background:                      @global-primary-background;
+@section-primary-color-mode:                      light;
+
+@section-secondary-background:                    @global-secondary-background;
+@section-secondary-color-mode:                    light;
+
+
+// Component
+// ========================================================================
+
+.hook-section() {}
+
+
+// Style modifiers
+// ========================================================================
+
+.hook-section-default() {}
+
+.hook-section-muted() {}
+
+.hook-section-primary() {}
+
+.hook-section-secondary() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-section-misc() {
+
+    // About
+    .section-about-count-text {
+        img {
+            margin-bottom: -113px !important;
+        }
+    }
+
+    .section-about-count-card {
+        padding-top: 163px;
+    }
+
+    // Product Quality Tests
+    .product-quality-tests-card {
+        background-image: linear-gradient(to bottom, @global-background 139px, @global-muted-background 139px);
+    }
+
+    // Product Safety
+    .section-product-safety-child {
+        background: linear-gradient(180deg, rgba(246, 240, 233, 0) 0%, #FFE7D9 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 66%;
+        padding-bottom: 60px;
+    }
+    
+    // History
+    .section-history {
+        .grid-history {
+            &::before {
+                content: '';
+                background-image: linear-gradient(to bottom, @global-border 90%, transparent 100%);
+                width: 1px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: calc(~"50% + 34.5px");
+            }
+
+            > * {
+                .uk-h2 {
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        background-color: #ff5c00;
+                        border-radius: 50%;
+                        width: 7px;
+                        height: 7px;
+                        position: absolute;
+                    }
+                }
+
+                &:nth-child(odd) {
+                    .uk-h2 {
+                        &::before {
+                            right: calc(~"-70px / 2 - 3.5px");
+                        }
+                    }
+                }
+
+                &:nth-child(even) {
+                    .uk-h2 {
+                        &::before {
+                            left: calc(~"-70px / 2 - 3.5px");
+                        }
+                    }
+                }
+
+                &:nth-child(odd):not(:first-child) {
+                    margin-top: -120px;
+                }
+
+                &:nth-child(even) {
+                    margin-top: 250px;
+                }
+            }
+        }
+    }
+
+    // Career
+    .section-career-our-values {
+        img {
+            margin-bottom: -160px !important;
+        }
+    }
+
+    .section-career-programs {
+        padding-top: 190px;
+    }
+
+    .section-career-stories {
+        .uk-grid {
+            > *:nth-child(2) {
+                margin-top: 110px;
+            }
+        }
+    }
+
+    //Content
+    .section-content {
+        h4 {
+            font-weight: 500;
+        }
+    }
+
+    //Contact
+    #contact-map {
+        height: 250px;
+    }
+
+    //Responsive
+    @media (max-width: @breakpoint-small-max) {
+        .uk-section-small {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        //About
+        .section-about-count-text {
+            padding-bottom: 50px;
+
+            img {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        .section-about-count-card {
+            padding-top: 30px;
+
+            .uk-grid {
+                margin-right: -30px;
+                scroll-snap-type: x mandatory;
+                flex-wrap: nowrap;
+                overflow: auto;
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                > * {
+                    scroll-snap-align: start;
+                    flex: none;
+                }
+            }
+        }
+
+        // History
+        .section-history {
+            .grid-history {
+                &::before {
+                    display: none;
+                }
+
+                .uk-h2 {
+                    &::before {
+                        bottom: -10px;
+                    }
+                }
+
+                > * {
+                    &:nth-child(odd) {
+                        .uk-h2 {
+                            &::before {
+                                right: calc(~"50% - 3.5px");
+                            }
+                        }
+                    }
+
+                    &:nth-child(even) {
+                        .uk-h2 {
+                            &::before {
+                                left: calc(~"50% - 3.5px");
+                            }
+                        }
+                    }
+
+                    &:nth-child(odd):not(:first-child) {
+                        margin-top: 30px;
+                    }
+
+                    &:nth-child(even) {
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+
+        // Product Quality Tests
+        .section-product-quality-tests-4 {
+            .uk-section {
+                padding: 30px 20px;
+            }
+        }
+
+        .product-quality-tests-card {
+            padding-top: 0;
+
+            .uk-grid {
+                margin-right: -30px;
+                margin-left: -10px;
+                scroll-snap-type: x mandatory;
+                flex-wrap: nowrap;
+                overflow: auto;
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                > * {
+                    padding-left: 10px;
+                    scroll-snap-align: start;
+                    flex: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: @breakpoint-xsmall-max) {
+        //About
+        .section-about-count-card {
+            .uk-grid {
+                margin-right: -20px;
+            }
+        }
+
+        // Product Quality Tests
+        .product-quality-tests-card {
+            .uk-grid {
+                margin-right: -20px;
+            }
+        }
+
+        .section-product-quality-tests-7 {
+            .uk-grid-medium > .uk-grid-margin {
+                margin-top: 20px;
+            }
+        }
+
+        //Ceo Message
+        .section-ceo-message {
+            padding-top: 0;
+
+            .image {
+                margin-right: -20px;
+                margin-left: -20px;
+            }
+        }
+    }
+}
