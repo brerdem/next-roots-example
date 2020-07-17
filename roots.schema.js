@@ -1,1 +1,1 @@
-module.exports = {"defaultLocale":"tr","locales":["tr","en"],"rules":[],"meta":[{"key":"*","data":{"title":"Next Roots","background":"grey"}}]}
+module.exports = {"defaultLocale":"tr","locales":["tr","en"],"rules":[{"key":"tr:about-us","href":"/tr/hakkimizda"},{"key":"en:about-us","href":"/en/about-us"}],"meta":[{"key":"*","data":{"title":"Next Roots","background":"grey"}}]}
